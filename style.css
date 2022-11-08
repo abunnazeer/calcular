@@ -25,10 +25,18 @@ body {
   box-shadow: 12px 12px 24px 0 var(--black-color),
     -12px -12px 24px 0 var(--grey-color);
   width: 30%;
-  height: 500px;
+  height: 530px;
   margin: auto;
   border-radius: 10px;
   padding: 1.3rem;
+}
+.title {
+  width: 166px;
+  margin: 10px auto;
+  padding: 5px 0;
+  text-align: center;
+  box-shadow: inset 5px 5px 10px 0 var(--black-color),
+    inset -5px -5px 10px 0 var(--grey-color);
 }
 
 .display-result {
@@ -68,7 +76,12 @@ p {
   width: 50px;
   cursor: pointer;
 }
-
+.operate {
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  cursor: pointer;
+}
 .key-big {
   border-radius: 22px;
   width: 46px;
