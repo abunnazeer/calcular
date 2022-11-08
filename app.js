@@ -24,21 +24,27 @@ let firstValue = [];
 keysBtn.forEach(function (key, i) {
   key.addEventListener('click', function (e) {
     firstValue.push(e.target.textContent);
-    if (key.contains(clear)) {
-      firstValue = [];
-      calculation.textContent = '';
-      result.textContent = '';
-      console.log('You have clear the calculation');
-    } else if (key.contains(deleteBtn)) {
-      Number(firstValue.splice(-1));
-      console.log(firstValue.splice(-1));
-      calculation.textContent = Number(firstValue.join(''));
-    } else if (key.contains(equality)) {
-      firstValue.pop();
-      console.log(eval(firstValue.join('')));
-      result.textContent = eval(firstValue.join(''));
-    } else {
-      calculation.textContent = firstValue.join('');
-    }
+
+    doCalculation(key);
   });
 });
+
+//This function check the condition and perform the calculation
+function doCalculation(key) {
+  if (key.contains(clear)) {
+    firstValue = [];
+    calculation.textContent = '';
+    result.textContent = '';
+    console.log('You have clear the calculation');
+  } else if (key.contains(deleteBtn)) {
+    Number(firstValue.splice(-1));
+    // console.log(firstValue.splice(-1));
+    calculation.textContent = Number(firstValue.join(''));
+  } else if (key.contains(equality)) {
+    firstValue.pop();
+    // console.log(eval(firstValue.join('')));
+    result.textContent = eval(firstValue.join(''));
+  } else {
+    calculation.textContent = firstValue.join('');
+  }
+}
